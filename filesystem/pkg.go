@@ -252,6 +252,9 @@ func (d *Directory) PostponeUnmaterializable(absolutePath string) string {
 	script := d.Metadata.postponeUnmaterializable(absolutePath)
 
 	d.Walk(absolutePath, func(path string, node Node) error {
+		if node == d {
+			return nil
+		}
 		script += node.PostponeUnmaterializable(path)
 		return filepath.SkipDir
 	})

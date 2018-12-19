@@ -152,6 +152,7 @@ const (
 func (p *Package) PrepareBuild() {
 	script := p.FSRoot.PostponeUnmaterializable("/")
 	if script != "" {
+		script = strings.TrimSuffix(script, "\n")
 		p.PrependActions(PackageAction{Type: SetupAction, Content: script})
 	}
 }
