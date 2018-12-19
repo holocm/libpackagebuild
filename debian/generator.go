@@ -121,9 +121,9 @@ func (g *Generator) Build() ([]byte, error) {
 
 	//build ar archive
 	return buildArArchive([]arArchiveEntry{
-		arArchiveEntry{"debian-binary", []byte("2.0\n")},
-		arArchiveEntry{"control.tar.gz", controlTar},
-		arArchiveEntry{"data.tar.xz", dataTar.Bytes()},
+		{"debian-binary", []byte("2.0\n")},
+		{"control.tar.gz", controlTar},
+		{"data.tar.xz", dataTar.Bytes()},
 	})
 }
 

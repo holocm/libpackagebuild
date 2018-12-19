@@ -54,5 +54,4 @@ bytes, err := generator.Build()
   // `bytes` contains the resulting package as a bytestring
 ```
 
-TODO Makefile (gofmt, golint, govet, go test)
 TODO Travis CI

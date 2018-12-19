@@ -232,17 +232,17 @@ var rpmlibPseudoDependencies = []rpmlibPseudoDependency{
 	//indicate that RPMTAG_PROVIDENAME and RPMTAG_OBSOLETENAME may have a
 	//version associated with them (as if the presence of
 	//RPMTAG_PROVIDEVERSION and RPMTAG_OBSOLETEVERSION is not enough)
-	rpmlibPseudoDependency{"VersionedDependencies", "3.0.3-1"},
+	{"VersionedDependencies", "3.0.3-1"},
 	//indicate that filenames in the payload are represented in the
 	//RPMTAG_DIRINDEXES, RPMTAG_DIRNAME and RPMTAG_BASENAMES indexes
 	//(again, as if the presence of these tags wasn't evidence enough)
-	rpmlibPseudoDependency{"CompressedFileNames", "3.0.4-1"},
+	{"CompressedFileNames", "3.0.4-1"},
 	//title says it all; apparently RPM devs haven't got the memo that you can
 	//easily identify compression formats by the first few bytes
-	rpmlibPseudoDependency{"PayloadIsLzma", "4.4.6-1"},
+	{"PayloadIsLzma", "4.4.6-1"},
 	//path names in the CPIO payload start with "./" because apparently you
 	//cannot read that from the payload itself
-	rpmlibPseudoDependency{"PayloadFilesHavePrefix", "4.0-1"},
+	{"PayloadFilesHavePrefix", "4.0-1"},
 }
 
 var flagsForConstraintRelation = map[string]int32{
@@ -264,7 +264,7 @@ func serializeRelations(h *rpmHeader, rels []build.PackageRelation, namesTag, fl
 			rels = append(rels, build.PackageRelation{
 				RelatedPackage: "rpmlib(" + dep.Name + ")",
 				Constraints: []build.VersionConstraint{
-					build.VersionConstraint{Relation: "rpmlib", Version: dep.Version},
+					{Relation: "rpmlib", Version: dep.Version},
 				},
 			})
 		}
