@@ -53,5 +53,3 @@ fmt.Println(generator.RecommendedFileName())
 bytes, err := generator.Build()
   // `bytes` contains the resulting package as a bytestring
 ```
-
-TODO Travis CI
