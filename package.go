@@ -48,15 +48,15 @@ const (
 	ArchitectureAArch64
 )
 
-//PrerelaseType is an enum that describes whether the package is an alpha, beta or final release.
+//PrereleaseType is an enum that describes whether the package is an alpha, beta or final release.
 type PrereleaseType uint
 
 const (
-	// Final release
+	//PrereleaseTypeNone indicates a final release that does not have "alpha" or "beta" added to its version number.
 	PrereleaseTypeNone PrereleaseType = iota
-	// Alpha
+	//PrereleaseTypeAlpha indicates an alpha release.
 	PrereleaseTypeAlpha
-	// Beta
+	//PrereleaseTypeBeta indicates a beta release.
 	PrereleaseTypeBeta
 )
 
