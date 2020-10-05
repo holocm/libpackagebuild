@@ -69,7 +69,7 @@ func (pt PrereleaseType) String() string {
 	case PrereleaseTypeBeta:
 		return "beta"
 	}
-	panic("unreachable")
+	panic(fmt.Sprintf("unexpected value for PrereleaseType: %d", uint(pt)))
 }
 
 //Package contains all information about a single package. This representation
@@ -81,11 +81,11 @@ type Package struct {
 	Version string
 	//PrereleaseType specifies whether it's a an alpha, beta or a final release.
 	PrereleaseType PrereleaseType
-	//PrereleaseNo is a counter of prereleases of a given type.
-	//(PrereleaseType=alpha, PrereleaseNo=5) will append "alpha.5" to the
+	//PrereleaseVersion is a counter of prereleases of a given type.
+	//(PrereleaseType=alpha, PrereleaseVersion=5) will append "alpha.5" to the
 	//package's version (with a separator appropriate for a given package
 	//format).
-	PrereleaseNo uint
+	PrereleaseVersion uint
 	//Release is a counter that can be increased when the same version of one
 	//package needs to be rebuilt. The default value shall be 1.
 	Release uint
