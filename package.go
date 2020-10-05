@@ -60,7 +60,7 @@ const (
 	PrereleaseTypeBeta
 )
 
-func (pt PrereleaseType) ToString() string {
+func (pt PrereleaseType) String() string {
 	switch pt {
 	case PrereleaseTypeNone:
 		return "none"
